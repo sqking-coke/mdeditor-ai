@@ -58,7 +58,7 @@ coverage/
 .env.production.local
 
 # Claude Code 本地配置
-.claude/settings.local.json
+.claude/
 CLAUDE.md
 
 # GSD 规划文件

@@ -13,6 +13,7 @@ import { indentUnit, indentOnInput } from '@codemirror/language';
 import { keymap } from '@codemirror/view';
 import { indentMore, indentLess } from '@codemirror/commands';
 import { EDITOR_CONFIG } from '../../config/constants/editor.js';
+import { sharedEditorView } from '../../shared/composables/useSharedEditorView.js';
 
 /**
  * 编辑器生命周期管理
@@ -94,6 +95,9 @@ export function useEditorLifecycle({ editorState, editorEvents, editorTheme }) {
     // 设置编辑器实例
     editorState.setEditorView(editorView);
 
+    // 注册到共享编辑器视图，供 AI 功能等跨组件访问
+    sharedEditorView.value = editorView;
+
     // 绑定滚动事件
     editorEvents.bindScrollListener(editorView);
   };
@@ -110,6 +114,7 @@ export function useEditorLifecycle({ editorState, editorEvents, editorTheme }) {
       // 销毁编辑器
       editorView.destroy();
       editorState.setEditorView(null);
+      sharedEditorView.value = null;
     }
   };
 

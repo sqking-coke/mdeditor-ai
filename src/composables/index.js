@@ -18,6 +18,11 @@ export { useUIState } from './useUIState.js';
 export { useNotification } from './useNotification.js';
 export { useClipboard } from './useClipboard.js';
 export { useExport } from './useExport.js';
+export { useAI } from './useAI.js';
+export { useAISettings } from './useAISettings.js';
+
+// 共享工具组合式API
+export { useSharedEditorView } from '../shared/composables/useSharedEditorView.js';
 
 // Electron集成相关组合式API
 export { useElectron } from './useElectron.js';

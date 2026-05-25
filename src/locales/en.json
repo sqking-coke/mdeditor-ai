@@ -17,7 +17,14 @@
     "copy": "Copy",
     "export": "Download",
     "github": "GitHub",
-    "language": "Language"
+    "language": "Language",
+    "ai": {
+      "title": "AI Assistant",
+      "polish": "AI Polish",
+      "generateTitle": "Generate Title",
+      "generateSummary": "Generate Summary",
+      "generateImage": "Generate Image"
+    }
   },
   "main": {
     "editor": {
@@ -72,30 +79,85 @@
         "monospace": "Monospace — equal-width characters, neatly aligned"
       },
       "items": {
-        "pingfang-sc": { "name": "PingFang SC", "description": "Apple default Chinese font" },
-        "hiragino-sans": { "name": "Hiragino Sans", "description": "Classic macOS Chinese font" },
-        "songti-sc": { "name": "Songti SC", "description": "Apple classic serif font" },
-        "kaiti-mac": { "name": "STKaiti", "description": "Handwritten calligraphy style" },
-        "sf-mono": { "name": "SF Mono", "description": "Equal-width characters, clean and aligned" },
-        "microsoft-yahei": { "name": "Microsoft YaHei", "description": "Windows default Chinese font" },
-        "simhei": { "name": "SimHei", "description": "Windows classic sans-serif" },
-        "simsun": { "name": "SimSun", "description": "Windows classic serif font" },
-        "kaiti-win": { "name": "KaiTi", "description": "Handwritten calligraphy style" },
-        "fangsong": { "name": "FangSong", "description": "Traditional printing style" },
-        "consolas": { "name": "Consolas", "description": "Equal-width characters, clean and aligned" },
-        "noto-sans-sc": { "name": "Noto Sans SC", "description": "Google open-source sans-serif" },
-        "noto-serif-sc": { "name": "Noto Serif SC", "description": "Google open-source serif" },
-        "noto-sans-mono": { "name": "Noto Sans Mono", "description": "Equal-width characters, clean and aligned" },
-        "system-default": { "name": "System Default", "description": "Auto-match current system font" }
+        "pingfang-sc": {
+          "name": "PingFang SC",
+          "description": "Apple default Chinese font"
+        },
+        "hiragino-sans": {
+          "name": "Hiragino Sans",
+          "description": "Classic macOS Chinese font"
+        },
+        "songti-sc": {
+          "name": "Songti SC",
+          "description": "Apple classic serif font"
+        },
+        "kaiti-mac": {
+          "name": "STKaiti",
+          "description": "Handwritten calligraphy style"
+        },
+        "sf-mono": {
+          "name": "SF Mono",
+          "description": "Equal-width characters, clean and aligned"
+        },
+        "microsoft-yahei": {
+          "name": "Microsoft YaHei",
+          "description": "Windows default Chinese font"
+        },
+        "simhei": {
+          "name": "SimHei",
+          "description": "Windows classic sans-serif"
+        },
+        "simsun": {
+          "name": "SimSun",
+          "description": "Windows classic serif font"
+        },
+        "kaiti-win": {
+          "name": "KaiTi",
+          "description": "Handwritten calligraphy style"
+        },
+        "fangsong": {
+          "name": "FangSong",
+          "description": "Traditional printing style"
+        },
+        "consolas": {
+          "name": "Consolas",
+          "description": "Equal-width characters, clean and aligned"
+        },
+        "noto-sans-sc": {
+          "name": "Noto Sans SC",
+          "description": "Google open-source sans-serif"
+        },
+        "noto-serif-sc": {
+          "name": "Noto Serif SC",
+          "description": "Google open-source serif"
+        },
+        "noto-sans-mono": {
+          "name": "Noto Sans Mono",
+          "description": "Equal-width characters, clean and aligned"
+        },
+        "system-default": {
+          "name": "System Default",
+          "description": "Auto-match current system font"
+        }
       }
     },
     "footer": {
       "apply": "Apply Settings"
     },
-    "color": { "customColor": "Custom color", "pickAny": "Pick any color" },
-    "font": { "family": "Font family" },
-    "spacing": { "letter": "Letter spacing", "line": "Line spacing" },
-    "code": { "preview": "Preview" },
+    "color": {
+      "customColor": "Custom color",
+      "pickAny": "Pick any color"
+    },
+    "font": {
+      "family": "Font family"
+    },
+    "spacing": {
+      "letter": "Letter spacing",
+      "line": "Line spacing"
+    },
+    "code": {
+      "preview": "Preview"
+    },
     "colorPicker": {
       "quickPick": "Quick pick",
       "previewTitle": "Preview",
@@ -105,29 +167,83 @@
     },
     "themeSystem": {
       "items": {
-        "default": { "name": "Default", "description": "Unified modern layout for Markdown" },
-        "breeze": { "name": "Breeze", "description": "Clean layout optimized for mobile content distribution" }
+        "default": {
+          "name": "Default",
+          "description": "Unified modern layout for Markdown"
+        },
+        "breeze": {
+          "name": "Breeze",
+          "description": "Clean layout optimized for mobile content distribution"
+        }
       }
     },
     "colorTheme": {
       "items": {
-        "chijin": { "name": "Magenta", "description": "Bright, vivid like a rose" },
-        "dianlan": { "name": "Dark Purple", "description": "Deep and elegant" },
-        "ehuang": { "name": "Apricot", "description": "Warm and gentle like autumn sun" },
-        "conglv": { "name": "Scallion Green", "description": "Fresh and lively like spring" },
-        "shiliuhong": { "name": "Pomegranate Red", "description": "Passionate and vivid" },
-        "meihei": { "name": "Coal Black", "description": "Deep and dignified" },
-        "ganziqing": { "name": "Indigo", "description": "Mystic elegance" },
-        "xuanse": { "name": "Dark Crimson", "description": "Profound with red tone" }
+        "chijin": {
+          "name": "Magenta",
+          "description": "Bright, vivid like a rose"
+        },
+        "dianlan": {
+          "name": "Dark Purple",
+          "description": "Deep and elegant"
+        },
+        "ehuang": {
+          "name": "Apricot",
+          "description": "Warm and gentle like autumn sun"
+        },
+        "conglv": {
+          "name": "Scallion Green",
+          "description": "Fresh and lively like spring"
+        },
+        "shiliuhong": {
+          "name": "Pomegranate Red",
+          "description": "Passionate and vivid"
+        },
+        "meihei": {
+          "name": "Coal Black",
+          "description": "Deep and dignified"
+        },
+        "ganziqing": {
+          "name": "Indigo",
+          "description": "Mystic elegance"
+        },
+        "xuanse": {
+          "name": "Dark Crimson",
+          "description": "Profound with red tone"
+        }
       }
     },
     "codeStyle": {
       "items": {
-        "mac": { "name": "Mac Style", "description": "Classic macOS terminal look" },
-        "github": { "name": "GitHub Style", "description": "Clean GitHub-like code block" },
-        "vscode": { "name": "VS Code Style", "description": "Modern VS Code dark theme" },
-        "terminal": { "name": "Terminal", "description": "Retro black-green terminal" }
+        "mac": {
+          "name": "Mac Style",
+          "description": "Classic macOS terminal look"
+        },
+        "github": {
+          "name": "GitHub Style",
+          "description": "Clean GitHub-like code block"
+        },
+        "vscode": {
+          "name": "VS Code Style",
+          "description": "Modern VS Code dark theme"
+        },
+        "terminal": {
+          "name": "Terminal",
+          "description": "Retro black-green terminal"
+        }
       }
+    },
+    "ai": {
+      "title": "AI Configuration",
+      "textApiKey": "Text Model API Key",
+      "textApiKeyPlaceholder": "Enter DeepSeek API Key",
+      "imageApiKey": "Image Model API Key",
+      "imageApiKeyPlaceholder": "Enter Gemini API Key",
+      "textModel": "Text Model Name",
+      "textModelPlaceholder": "Enter model name, e.g. deepseek-chat",
+      "imageModel": "Image Model Name",
+      "imageModelPlaceholder": "Enter model name, e.g. gemini-2.5-flash-image-preview",
+      "saved": "API Key saved"
     }
   },
   "guide": {
@@ -205,7 +321,6 @@
     "mathInline": "Inline Formula $...$",
     "mathBlock": "Block Formula $$...$$"
   },
-
   "copyFormat": {
     "social": "WeChat Official Account format",
     "markdown": "Markdown"
@@ -213,5 +328,53 @@
   "exportFormat": {
     "pdf": "Export PDF",
     "image": "Export Image"
+  },
+  "ai": {
+    "polish": {
+      "title": "AI Text Polish",
+      "instructions": "Instructions (optional)",
+      "instructionsPlaceholder": "e.g. Make it more fluent, formal, concise...",
+      "selectedText": "Selected text",
+      "noSelection": "Please select some text in the editor first",
+      "polishing": "Polishing...",
+      "result": "Polished result",
+      "replace": "Replace",
+      "cancel": "Keep original"
+    },
+    "title": {
+      "title": "AI Title Generation",
+      "generating": "Analyzing article and generating titles...",
+      "results": "Title suggestions",
+      "insertHint": "Click a title to insert it at the beginning",
+      "noContent": "Please enter some content first"
+    },
+    "summary": {
+      "title": "AI Summary Generation",
+      "generating": "Analyzing article and generating summary...",
+      "result": "Article summary",
+      "insert": "Insert summary",
+      "noContent": "Please enter some content first"
+    },
+    "image": {
+      "title": "AI Image Generation",
+      "prompt": "Image description",
+      "promptPlaceholder": "Describe the image you want...",
+      "generating": "Generating image...",
+      "preview": "Image preview",
+      "altText": "Image alt text",
+      "download": "Download"
+    },
+    "error": {
+      "apiFailed": "AI service request failed: {message}",
+      "networkError": "Network connection failed, please check if the backend service is running",
+      "noTextApiKey": "Please configure the text model API Key in settings",
+      "noImageApiKey": "Please configure the image model API Key in settings"
+    },
+    "keyMissing": {
+      "title": "API Key Required",
+      "textKeyMessage": "A text model (DeepSeek) API Key is required for AI polish, title generation, and summary features.",
+      "imageKeyMessage": "An image model (Gemini) API Key is required for AI image generation.",
+      "goSettings": "Configure"
+    }
   }
 }

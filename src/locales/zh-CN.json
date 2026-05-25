@@ -17,7 +17,14 @@
     "copy": "复制",
     "export": "下载",
     "github": "GitHub",
-    "language": "语言"
+    "language": "语言",
+    "ai": {
+      "title": "AI 助手",
+      "polish": "AI 润色",
+      "generateTitle": "生成标题",
+      "generateSummary": "生成摘要",
+      "generateImage": "生成配图"
+    }
   },
   "main": {
     "editor": {
@@ -55,10 +62,20 @@
     "footer": {
       "apply": "应用设置"
     },
-    "color": { "customColor": "自定义颜色", "pickAny": "选择任意颜色" },
-    "font": { "family": "字体族" },
-    "spacing": { "letter": "字间距", "line": "行间距" },
-    "code": { "preview": "代码" },
+    "color": {
+      "customColor": "自定义颜色",
+      "pickAny": "选择任意颜色"
+    },
+    "font": {
+      "family": "字体族"
+    },
+    "spacing": {
+      "letter": "字间距",
+      "line": "行间距"
+    },
+    "code": {
+      "preview": "代码"
+    },
     "colorPicker": {
       "quickPick": "快速选择",
       "previewTitle": "主题预览",
@@ -86,48 +103,147 @@
         "monospace": "等宽字体 — 每个字符宽度相同，排列整齐"
       },
       "items": {
-        "pingfang-sc": { "name": "苹方", "description": "Apple 系统默认中文字体" },
-        "hiragino-sans": { "name": "冬青黑体", "description": "macOS 经典中文字体" },
-        "songti-sc": { "name": "宋体-简", "description": "Apple 经典衬线字体" },
-        "kaiti-mac": { "name": "华文楷体", "description": "手写风格，文艺气息" },
-        "sf-mono": { "name": "SF Mono", "description": "每个字符等宽对齐，整齐清晰" },
-        "microsoft-yahei": { "name": "微软雅黑", "description": "Windows 默认中文字体" },
-        "simhei": { "name": "黑体", "description": "Windows 经典黑体" },
-        "simsun": { "name": "宋体", "description": "Windows 经典衬线字体" },
-        "kaiti-win": { "name": "楷体", "description": "手写风格，文艺气息" },
-        "fangsong": { "name": "仿宋", "description": "传统印刷体风格" },
-        "consolas": { "name": "Consolas", "description": "每个字符等宽对齐，整齐清晰" },
-        "noto-sans-sc": { "name": "思源黑体", "description": "Google 开源无衬线字体" },
-        "noto-serif-sc": { "name": "思源宋体", "description": "Google 开源衬线字体" },
-        "noto-sans-mono": { "name": "Noto Sans Mono", "description": "每个字符等宽对齐，整齐清晰" },
-        "system-default": { "name": "系统默认", "description": "自动匹配当前系统字体" }
+        "pingfang-sc": {
+          "name": "苹方",
+          "description": "Apple 系统默认中文字体"
+        },
+        "hiragino-sans": {
+          "name": "冬青黑体",
+          "description": "macOS 经典中文字体"
+        },
+        "songti-sc": {
+          "name": "宋体-简",
+          "description": "Apple 经典衬线字体"
+        },
+        "kaiti-mac": {
+          "name": "华文楷体",
+          "description": "手写风格，文艺气息"
+        },
+        "sf-mono": {
+          "name": "SF Mono",
+          "description": "每个字符等宽对齐，整齐清晰"
+        },
+        "microsoft-yahei": {
+          "name": "微软雅黑",
+          "description": "Windows 默认中文字体"
+        },
+        "simhei": {
+          "name": "黑体",
+          "description": "Windows 经典黑体"
+        },
+        "simsun": {
+          "name": "宋体",
+          "description": "Windows 经典衬线字体"
+        },
+        "kaiti-win": {
+          "name": "楷体",
+          "description": "手写风格，文艺气息"
+        },
+        "fangsong": {
+          "name": "仿宋",
+          "description": "传统印刷体风格"
+        },
+        "consolas": {
+          "name": "Consolas",
+          "description": "每个字符等宽对齐，整齐清晰"
+        },
+        "noto-sans-sc": {
+          "name": "思源黑体",
+          "description": "Google 开源无衬线字体"
+        },
+        "noto-serif-sc": {
+          "name": "思源宋体",
+          "description": "Google 开源衬线字体"
+        },
+        "noto-sans-mono": {
+          "name": "Noto Sans Mono",
+          "description": "每个字符等宽对齐，整齐清晰"
+        },
+        "system-default": {
+          "name": "系统默认",
+          "description": "自动匹配当前系统字体"
+        }
       }
     },
     "themeSystem": {
       "items": {
-        "default": { "name": "默认主题", "description": "现代化 Markdown 统一排版" },
-        "breeze": { "name": "清风排版", "description": "面向移动端图文的清爽排版" }
+        "default": {
+          "name": "默认主题",
+          "description": "现代化 Markdown 统一排版"
+        },
+        "breeze": {
+          "name": "清风排版",
+          "description": "面向移动端图文的清爽排版"
+        }
       }
     },
     "colorTheme": {
       "items": {
-        "chijin": { "name": "洋红", "description": "鲜艳明亮如玫瑰般绚烂" },
-        "dianlan": { "name": "紫棠", "description": "深沉神秘，高贵典雅" },
-        "ehuang": { "name": "杏黄", "description": "温润典雅，如秋日暖阳" },
-        "conglv": { "name": "葱绿", "description": "清新自然，生机盎然" },
-        "shiliuhong": { "name": "石榴红", "description": "热情醒目，绚烂夺目" },
-        "meihei": { "name": "煤黑", "description": "深沉稳重，典雅内敛" },
-        "ganziqing": { "name": "绀青绀紫", "description": "神秘优雅，古朴高贵" },
-        "xuanse": { "name": "玄色", "description": "赤黑相间，深邃幽远" }
+        "chijin": {
+          "name": "洋红",
+          "description": "鲜艳明亮如玫瑰般绚烂"
+        },
+        "dianlan": {
+          "name": "紫棠",
+          "description": "深沉神秘，高贵典雅"
+        },
+        "ehuang": {
+          "name": "杏黄",
+          "description": "温润典雅，如秋日暖阳"
+        },
+        "conglv": {
+          "name": "葱绿",
+          "description": "清新自然，生机盎然"
+        },
+        "shiliuhong": {
+          "name": "石榴红",
+          "description": "热情醒目，绚烂夺目"
+        },
+        "meihei": {
+          "name": "煤黑",
+          "description": "深沉稳重，典雅内敛"
+        },
+        "ganziqing": {
+          "name": "绀青绀紫",
+          "description": "神秘优雅，古朴高贵"
+        },
+        "xuanse": {
+          "name": "玄色",
+          "description": "赤黑相间，深邃幽远"
+        }
       }
     },
     "codeStyle": {
       "items": {
-        "mac": { "name": "Mac 风格", "description": "经典 macOS 终端风格" },
-        "github": { "name": "GitHub 风格", "description": "清爽的浅色代码块" },
-        "vscode": { "name": "VS Code 风格", "description": "现代深色代码主题" },
-        "terminal": { "name": "终端风格", "description": "复古黑底绿字终端" }
+        "mac": {
+          "name": "Mac 风格",
+          "description": "经典 macOS 终端风格"
+        },
+        "github": {
+          "name": "GitHub 风格",
+          "description": "清爽的浅色代码块"
+        },
+        "vscode": {
+          "name": "VS Code 风格",
+          "description": "现代深色代码主题"
+        },
+        "terminal": {
+          "name": "终端风格",
+          "description": "复古黑底绿字终端"
+        }
       }
+    },
+    "ai": {
+      "title": "AI 配置",
+      "textApiKey": "文本模型 API Key",
+      "textApiKeyPlaceholder": "输入 DeepSeek API Key",
+      "imageApiKey": "图片模型 API Key",
+      "imageApiKeyPlaceholder": "输入 Gemini API Key",
+      "textModel": "文本模型名称",
+      "textModelPlaceholder": "输入模型名称，如 deepseek-chat",
+      "imageModel": "图片模型名称",
+      "imageModelPlaceholder": "输入模型名称，如 gemini-2.5-flash-image-preview",
+      "saved": "API Key 已保存"
     }
   },
   "guide": {
@@ -212,5 +328,53 @@
   "exportFormat": {
     "pdf": "导出 PDF",
     "image": "导出图片"
+  },
+  "ai": {
+    "polish": {
+      "title": "AI 文本润色",
+      "instructions": "润色要求（可选）",
+      "instructionsPlaceholder": "例如：让语言更流畅、更正式、更简洁...",
+      "selectedText": "选中文本",
+      "noSelection": "请先在编辑器中选择要润色的文本",
+      "polishing": "正在润色...",
+      "result": "润色结果",
+      "replace": "替换原文",
+      "cancel": "保留原文"
+    },
+    "title": {
+      "title": "AI 生成标题",
+      "generating": "正在分析文章并生成标题...",
+      "results": "标题建议",
+      "insertHint": "点击标题将其插入到文章开头",
+      "noContent": "请先输入文章内容"
+    },
+    "summary": {
+      "title": "AI 生成摘要",
+      "generating": "正在分析文章并生成摘要...",
+      "result": "文章摘要",
+      "insert": "插入摘要",
+      "noContent": "请先输入文章内容"
+    },
+    "image": {
+      "title": "AI 生成配图",
+      "prompt": "图片描述",
+      "promptPlaceholder": "描述你想要的图片内容...",
+      "generating": "正在生成图片...",
+      "preview": "图片预览",
+      "altText": "图片描述文本",
+      "download": "下载图片"
+    },
+    "error": {
+      "apiFailed": "AI 服务请求失败：{message}",
+      "networkError": "网络连接失败，请检查后端服务是否启动",
+      "noTextApiKey": "请先在设置中配置文本模型 API Key",
+      "noImageApiKey": "请先在设置中配置图片模型 API Key"
+    },
+    "keyMissing": {
+      "title": "未配置 API Key",
+      "textKeyMessage": "使用 AI 润色、生成标题和摘要功能需要配置文本模型（DeepSeek）的 API Key。",
+      "imageKeyMessage": "使用 AI 生成配图功能需要配置图片模型（Gemini）的 API Key。",
+      "goSettings": "去配置"
+    }
   }
 }

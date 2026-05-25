@@ -96,6 +96,11 @@
                   @update-line-height="updateLineHeight"
                 />
               </section>
+
+              <!-- AI 配置 -->
+              <section id="ai-settings" class="settings-section-wrapper">
+                <AiSettingsSection />
+              </section>
             </div>
           </div>
         </div>
@@ -137,6 +142,7 @@ import CodeStyleSection from "./settings/CodeStyleSection.vue";
 import FontSettingsSection from "./settings/FontSettingsSection.vue";
 import FontSizeSection from "./settings/FontSizeSection.vue";
 import SpacingSettingsSection from "./settings/SpacingSettingsSection.vue";
+import AiSettingsSection from "./settings/AiSettingsSection.vue";
 const ColorPicker = defineAsyncComponent(() => import("./ColorPicker.vue"));
 
 // Props
@@ -239,6 +245,14 @@ const navigationSections = [
     icon: {
       viewBox: "0 0 24 24",
       path: "M3 11h18v2H3v-2m6-6h6v2H9V5m0 14h6v2H9v-2",
+    },
+  },
+  {
+    id: "ai-settings",
+    labelKey: 'settings.ai.title',
+    icon: {
+      viewBox: "0 0 24 24",
+      path: "M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H14V10H10V11H13A1,1 0 0,1 14,12V15A1,1 0 0,1 13,16H12V17H11Z",
     },
   },
 ];

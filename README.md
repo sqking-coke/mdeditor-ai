@@ -13,6 +13,8 @@
   <a href="https://codemirror.net/6/"><img src="https://img.shields.io/badge/CodeMirror-6.x-0b87da.svg" alt="CodeMirror 6" /></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white" alt="node >=18" /></a>
   <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/npm-%3E%3D9-CB3837?logo=npm&logoColor=white" alt="npm >=9" /></a>
+  <a href="https://www.deepseek.com/"><img src="https://img.shields.io/badge/AI-DeepSeek-536DFE.svg" alt="DeepSeek" /></a>
+  <a href="https://deepmind.google/technologies/gemini/"><img src="https://img.shields.io/badge/AI-Gemini-4285F4.svg" alt="Gemini" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" /></a>
 </p>
 
@@ -21,6 +23,19 @@
 </p>
 
 > 一款专为极致书写体验与「一键复制为公众号格式」而生的现代化 Markdown 编辑器。界面精致、体验顺滑，所见即所得地预览与复制，帮助你高效创作优雅内容。
+
+## 本项目
+
+Fork 自 [xiaobox/mdeditor](https://github.com/xiaobox/mdeditor)
+
+在原项目基础上新增功能：
+
+- **AI 文本润色**：选中文本，输入润色要求，AI 自动优化表达，一键替换原文
+- **AI 生成标题**：分析全文内容，智能生成 5 个标题建议，点击即可插入文章开头
+- **AI 生成摘要**：自动提取文章要点，生成简洁摘要，支持插入文章末尾
+- **AI 生成配图**：输入图片描述文本，AI 生成对应图片并插入 Markdown 图片语法
+- **Java Spring Boot 后端**：纯 REST API 转发代理，API Key 由用户自行配置，后端不持有不存储
+- **i18n 错误提示优化**：网络连接失败等异常场景使用中文友好提示
 
 ## 项目简介
 
@@ -33,6 +48,24 @@
 
 ## 效果预览
 
+###  AI 助手
+
+<!-- TODO: AI 助手功能截图 -->
+
+#### AI 文本润色
+*（截图待补充）*
+
+#### AI 生成标题
+*（截图待补充）*
+
+#### AI 生成摘要
+*（截图待补充）*
+
+#### AI 生成配图
+*（截图待补充）*
+
+#### AI 配置面板
+*（截图待补充）*
 
 ###  一键复制公众号格式
 
@@ -70,6 +103,13 @@
 
 ## 项目特性
 
+- **AI 智能助手（新增）**：
+  - AI 文本润色：选中文本，输入润色要求，AI 自动优化表达
+  - AI 生成标题：分析全文，智能生成 5 个标题建议，点击即可插入
+  - AI 生成摘要：自动提取文章要点，生成简洁摘要
+  - AI 生成配图：输入描述文本，AI 生成对应图片并插入 Markdown
+  - 配置灵活：支持自定义 API Key 和模型名称，文本模型（DeepSeek）+ 图片模型（Gemini）
+  - 数据安全：API Key 仅存储在浏览器 localStorage，后端不做持久化
 - **所见即所得预览与编辑（WYSIWYG）**：
   - 新增「可编辑模式」：点击顶部「视图切换」中的「所见即所得（可编辑）」按钮进入富文本所见即所得编辑；再次点击可切回「编辑器」或「编辑 + 预览」。
   - 基于 Milkdown（preset-commonmark + preset-gfm）与 Prism 高亮，并与 Markdown 文本双向同步。
@@ -104,6 +144,7 @@
 - **核心框架**
   - **Vue 3**：组件化与响应式核心，使用 `<script setup>` 与组合式 API 实现清晰的 UI 与状态管理。
   - **Vite 5**：极速开发服务器与构建工具，HMR 体验优秀，使用官方插件 `@vitejs/plugin-vue` 处理 `.vue`。
+  - **Spring Boot 3.5**：AI 功能后端服务，提供 REST API 转发代理，Java 21 + Maven。
 - **编辑器**
 - **CodeMirror 6**：提供高性能文本编辑、快捷键与滚动事件。在 `src/composables/editor/` 封装编辑器的生命周期、操作与状态。
   - **所见即所得（Milkdown）**：基于 `@milkdown/core`、`preset-commonmark`、`preset-gfm`、`plugin-prism`、`plugin-history`、`plugin-clipboard` 与自定义 Mermaid NodeView；组件：`src/components/WysiwygPane.vue`。
@@ -169,8 +210,8 @@ npm run make:mac
 
 ```bash
 # 克隆
-git clone https://github.com/xiaobox/mdeditor.git
-cd modern-md-editor
+git clone https://github.com/sqking-coke/mdeditor-ai.git
+cd mdeditor-ai
 
 # 安装依赖（任选其一）
 npm install
@@ -248,6 +289,11 @@ docker run -d --name mdeditor -p 8080:80 helongisno1/mdeditor:latest
 - 顶部「下载」下拉：
   - 选择「导出 PDF」将预览内容导出为 A4 分页 PDF 文件。
   - 选择「导出图片」将预览内容导出为高清 PNG 长图。
+- **AI 助手使用**：
+  - 点击顶部 Header「AI 助手」下拉菜单，选择功能（润色/标题/摘要/配图）
+  - 首次使用需在设置面板「AI 配置」中填入 API Key 和模型名称
+  - 需要启动 Java 后端服务：`cd server && mvn spring-boot:run`
+  - 前端 Vite 开发服务器自动将 `/api` 请求代理到后端（`localhost:8080`）
 
 ### 组件/模块与扩展点
 
@@ -264,6 +310,17 @@ docker run -d --name mdeditor -p 8080:80 helongisno1/mdeditor:latest
   - 代码块渲染：`src/core/markdown/code-formatter.js`
   - 社交样式化与适配：`src/core/markdown/social-adapters.js`
 - **主题系统（CSS 变量）**：`src/core/theme/manager.js`、`src/core/theme/loader.js`
+- **AI 功能（前端）**：
+  - AI 弹窗组件：`src/components/ai/AiPolishDialog.vue`、`AiTitleDialog.vue`、`AiSummaryDialog.vue`、`AiImageDialog.vue`
+  - AI 设置：`src/components/settings/AiSettingsSection.vue`
+  - AI 请求与状态管理：`src/composables/useAI.js`
+  - API Key 管理：`src/composables/useAISettings.js`
+  - 编辑器实例共享：`src/shared/composables/useSharedEditorView.js`
+- **AI 功能（后端 `server/`）**：
+  - REST Controller：`server/src/main/java/com/mdeditor/ai/controller/AiController.java`
+  - AI 服务实现：`server/src/main/java/com/mdeditor/ai/service/impl/AiServiceImpl.java`
+  - 全局异常处理：`server/src/main/java/com/mdeditor/ai/exception/GlobalExceptionHandler.java`
+  - DTO 层（Java Records）：`server/src/main/java/com/mdeditor/ai/dto/`
 
 ### 复制/格式化 API（用于二次开发）
 
@@ -362,7 +419,7 @@ const result = await exportAsImage(markdownText, options)
 
 ## 联系与致谢
 
-- **源码**：`https://github.com/xiaobox/mdeditor`
+- **源码**：`https://github.com/sqking-coke/mdeditor-ai`
 - **灵感与依赖**：`Vue 3`、`Vite`、`CodeMirror 6`、`github-markdown-css` 等优秀开源项目。
 
 ## 支持我们
@@ -392,6 +449,30 @@ const result = await exportAsImage(markdownText, options)
 如果这个项目对你有帮助，欢迎 Star ⭐️ 支持！也欢迎提交 Issue/PR 一起把它打磨得更好。
 
 
+## 更新日志
+
+### 2026-05-25 — AI 功能扩展
+
+**新增功能：**
+
+- **AI 文本润色**：选中编辑器文本 → AI 助手 → 润色 → 输入要求 → 获取润色结果 → 一键替换原文
+- **AI 生成标题**：自动分析全文内容，生成 5 个标题建议，点击标题插入到文章开头
+- **AI 生成摘要**：自动提取文章要点，生成简洁摘要，可插入到文章末尾
+- **AI 生成配图**：输入图片描述文本，AI 生成对应图片并插入 Markdown 图片语法
+- **AI 配置面板**：设置面板新增「AI 配置」区域，支持配置文本/图片模型的 API Key 和模型名称
+- **Java 后端服务**：Spring Boot 3.5 纯 REST API 转发代理，不持有任何用户 API Key
+- **HTTP 代理支持**：JDK HttpClient 读取系统代理设置，支持 VPN/代理环境
+- **错误提示优化**：网络错误、API 错误等使用 i18n 中文友好提示
+
+*（截图待补充）*
+
+**BUG 修复：**
+
+- 修复工具栏在系统深色模式下「胡成一团颜色」的问题 — 移除 ToolbarButton.vue 中不一致的暗色主题媒体查询，按钮颜色统一使用浅色 neumorphism 风格，不再随系统主题切换
+- 修复 GitHub 跳转链接指向旧仓库的问题，更新为 `sqking-coke/mdeditor-ai`
+
+*（截图待补充）*
+
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=xiaobox/mdeditor&type=Date)](https://www.star-history.com/#xiaobox/mdeditor&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=sqking-coke/mdeditor-ai&type=Date)](https://www.star-history.com/#sqking-coke/mdeditor-ai&Date)

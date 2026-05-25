@@ -125,7 +125,14 @@ export default defineConfig({
     // 端口号
     port: 3000,
     // 允许通过局域网 IP 访问
-    host: true
+    host: true,
+    // API 代理到 Java 后端
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      }
+    }
   },
 
   // 生产构建配置

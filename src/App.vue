@@ -20,6 +20,7 @@
       @export-format-select="handleExportFormatSelect"
       @preload-settings="preloadSettingsPanel"
       @preload-guide="preloadMarkdownGuide"
+      @ai-select="handleAiSelect"
     />
 
     <!-- 隐藏文件输入：用于导入 .md -->
@@ -78,7 +79,51 @@
       @close="closeGuide"
     />
 
+    <!-- AI 对话框 -->
+    <AiPolishDialog
+      :visible="showAiPolishDialog"
+      :selected-text="currentSelectedText"
+      :is-loading="isPolishing"
+      :result="polishResult"
+      :error="aiError"
+      @close="closeAiDialogs"
+      @polish="handlePolishRequest"
+      @replace="handlePolishReplace"
+    />
 
+    <AiTitleDialog
+      :visible="showAiTitleDialog"
+      :is-loading="isGeneratingTitle"
+      :titles="titleResults"
+      :error="aiError"
+      @close="closeAiDialogs"
+      @insert="handleTitleInsert"
+    />
+
+    <AiSummaryDialog
+      :visible="showAiSummaryDialog"
+      :is-loading="isGeneratingSummary"
+      :summary="summaryResult"
+      :error="aiError"
+      @close="closeAiDialogs"
+      @insert="handleSummaryInsert"
+    />
+
+    <AiImageDialog
+      :visible="showAiImageDialog"
+      :is-loading="isGeneratingImage"
+      :image-data="imageResult"
+      :error="aiError"
+      @close="closeAiDialogs"
+      @generate="handleImageGenerate"
+    />
+
+    <AiKeyMissingDialog
+      :visible="showAiKeyMissingDialog"
+      :message="keyMissingMessage"
+      @close="closeAiDialogs"
+      @go-settings="handleGoToAiSettings"
+    />
   </div>
 </template>
 
@@ -93,6 +138,13 @@ const loadSettingsPanel = () => import('./components/SettingsPanel.vue')
 const loadMarkdownGuide = () => import('./components/MarkdownGuide.vue')
 const SettingsPanel = defineAsyncComponent(loadSettingsPanel)
 const MarkdownGuide = defineAsyncComponent(loadMarkdownGuide)
+
+// AI 对话框组件（懒加载）
+const AiPolishDialog = defineAsyncComponent(() => import('./components/ai/AiPolishDialog.vue'))
+const AiTitleDialog = defineAsyncComponent(() => import('./components/ai/AiTitleDialog.vue'))
+const AiSummaryDialog = defineAsyncComponent(() => import('./components/ai/AiSummaryDialog.vue'))
+const AiImageDialog = defineAsyncComponent(() => import('./components/ai/AiImageDialog.vue'))
+const AiKeyMissingDialog = defineAsyncComponent(() => import('./components/ai/AiKeyMissingDialog.vue'))
 
 // 预加载方法：鼠标悬停按钮时提前加载 chunk
 const preloadSettingsPanel = () => { loadSettingsPanel() }
@@ -135,7 +187,33 @@ const {
   showNotification,
   handleCopyFormatSelect,
   handleExportFormatSelect,
-  openGithub
+  openGithub,
+
+  // AI 状态和方法
+  isPolishing,
+  isGeneratingTitle,
+  isGeneratingSummary,
+  isGeneratingImage,
+  polishResult,
+  titleResults,
+  summaryResult,
+  imageResult,
+  aiError,
+  showAiPolishDialog,
+  showAiTitleDialog,
+  showAiSummaryDialog,
+  showAiImageDialog,
+  showAiKeyMissingDialog,
+  keyMissingMessage,
+  currentSelectedText,
+  handleAiSelect,
+  handlePolishRequest,
+  handlePolishReplace,
+  handleTitleInsert,
+  handleSummaryInsert,
+  handleImageGenerate,
+  handleGoToAiSettings,
+  closeAiDialogs
 } = useAppState()
 
 // 使用Electron集成
