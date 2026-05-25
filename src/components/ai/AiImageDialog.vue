@@ -72,12 +72,14 @@ function handleGenerate() {
   emit('generate', prompt.value)
 }
 
+const MIME_TO_EXT = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' }
+
 function handleDownload() {
   const { imageUrl, altText } = props.imageData
   const link = document.createElement('a')
-  // 从 data URL 推断文件扩展名
-  const mimeMatch = imageUrl.match(/^data:(image\/\w+);/)
-  const ext = mimeMatch ? mimeMatch[1].split('/')[1] : 'png'
+  const mimeMatch = imageUrl.match(/^data:(image\/[^;]+);/)
+  const mime = mimeMatch ? mimeMatch[1] : ''
+  const ext = MIME_TO_EXT[mime] || 'jpg'
   link.href = imageUrl
   link.download = `${altText || 'image'}.${ext}`
   document.body.appendChild(link)
