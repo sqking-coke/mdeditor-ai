@@ -50,22 +50,27 @@ Fork 自 [xiaobox/mdeditor](https://github.com/xiaobox/mdeditor)
 
 ###  AI 助手
 
-<!-- TODO: AI 助手功能截图 -->
+![](./docs/images/功能卡片.jpg)
 
 #### AI 文本润色
-*（截图待补充）*
+
+![](./docs/images/文本润色.jpg)
 
 #### AI 生成标题
-*（截图待补充）*
+
+![](./docs/images/生成标题.jpg)
 
 #### AI 生成摘要
-*（截图待补充）*
+
+![](./docs/images/生成摘要.jpg)
 
 #### AI 生成配图
-*（截图待补充）*
+
+![](./docs/images/AI%20生图.jpg)
 
 #### AI 配置面板
-*（截图待补充）*
+
+![](./docs/images/设置页面.jpg)
 
 ###  一键复制公众号格式
 
@@ -168,6 +173,8 @@ Fork 自 [xiaobox/mdeditor](https://github.com/xiaobox/mdeditor)
 ## 环境要求
 
 - **Node.js**：≥ 18（推荐 18/20 LTS）
+- **Java**：21+（AI 功能后端需要）
+- **Maven**：3.8+
 
 ## 桌面应用支持
 
@@ -220,8 +227,14 @@ yarn
 # 或
 pnpm install
 
-# 本地开发
+# 本地开发（仅前端）
 npm run dev
+
+# 一键启动前后端（推荐）
+npm run dev:all
+
+# 单独启动后端（AI 功能需要）
+npm run server
 
 # 生产构建
 npm run build
@@ -433,13 +446,27 @@ const result = await exportAsImage(markdownText, options)
         <img
           src="https://xiaobox-public-images.oss-cn-beijing.aliyuncs.com/imagescc16a59f8b43da4a3ad3ce201f46fc9d.jpg"
           style="width: 200px"
-        /><br />
+        /><br /><sub>原作者赞赏码</sub>
       </td>
       <td align="center" style="width: 260px">
         <img
           src="https://xiaobox-public-images.oss-cn-beijing.aliyuncs.com/images2d585d78e23826f6698ddd4edec5d9c2.jpg"
           style="width: 200px"
-        /><br />
+        /><br /><sub>原作者微信</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="width: 260px">
+        <img
+          src="./docs/images/赞赏码.JPG"
+          style="width: 200px"
+        /><br /><sub>赞赏码</sub>
+      </td>
+      <td align="center" style="width: 260px">
+        <img
+          src="./docs/images/公众号.JPG"
+          style="width: 200px"
+        /><br /><sub>公众号</sub>
       </td>
     </tr>
   </tbody>
@@ -464,14 +491,9 @@ const result = await exportAsImage(markdownText, options)
 - **HTTP 代理支持**：JDK HttpClient 读取系统代理设置，支持 VPN/代理环境
 - **错误提示优化**：网络错误、API 错误等使用 i18n 中文友好提示
 
-*（截图待补充）*
-
 **BUG 修复：**
 
 - 修复工具栏在系统深色模式下「胡成一团颜色」的问题 — 移除 ToolbarButton.vue 中不一致的暗色主题媒体查询，按钮颜色统一使用浅色 neumorphism 风格，不再随系统主题切换
-- 修复 GitHub 跳转链接指向旧仓库的问题，更新为 `sqking-coke/mdeditor-ai`
-
-*（截图待补充）*
 
 ## Star History
 
