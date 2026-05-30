@@ -61,10 +61,11 @@ public class AiServiceImpl implements AiService {
     @SuppressWarnings("unchecked")
     public Map<String, String> generateImage(String apiKey, String model, String prompt) {
         String url = aiConfig.getGemini().getBaseUrl() + "/models/"
-                + model + ":generateContent?key=" + apiKey;
+                + model + ":generateContent";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("x-goog-api-key", apiKey);
 
         var requestBody = new GeminiContentRequest(
                 List.of(new GeminiContentRequest.Content(
