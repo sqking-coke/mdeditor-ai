@@ -78,7 +78,7 @@ const showTextKey = ref(false)
 const showImageKey = ref(false)
 
 function onTextKeyChange(e) { setTextApiKey(e.target.value) }
-function onImageKeyChange(e) { setImageKey(e.target.value) }
+function onImageKeyChange(e) { setImageApiKey(e.target.value) }
 function onTextModelChange(e) { setTextModel(e.target.value) }
 function onImageModelChange(e) { setImageModel(e.target.value) }
 </script>
